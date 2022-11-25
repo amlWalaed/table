@@ -1,14 +1,14 @@
-$main-color:blue;
-$border-color:#ccc;
-$gray-color:#aaa;
-$white-color:#FFF;
+$main-color: blue;
+$border-color: #ccc;
+$gray-color: #aaa;
+$white-color: #FFF;
+
 *,
 *::after,
 *::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    text-align: center !important;
 }
 
 @for $i from 1 through 12 {
@@ -25,26 +25,36 @@ body {
     text-align: right;
     font-family: 'Cairo', sans-serif;
     font-size: 16px;
+
     @media (max-width: 567px) {
         font-size: 12px;
     }
 
 }
+
 .pos-sticky {
     position: sticky;
     top: 0;
 }
 
-.table {
+.table-container {
     margin: auto;
     width: 100%;
     height: 50vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: relative;
+}
+
+.table {
+    width: 95%;
+    margin: 25px auto;
+
 
     &.float-left {
         float: left;
     }
+
     .item {
         justify-content: center;
         align-items: center;
@@ -72,5 +82,66 @@ body {
 
     .item {
         background-color: $main-color !important;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+button {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    background: linear-gradient(to bottom, #03b5bc, #03b5bc4f);
+    padding: 10px 15px;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+button:hover {
+    box-shadow: 0 0 0px 5px #03b5bc4f;
+}
+
+.account-invoice {
+    display: flex;
+
+    :first-child {
+        background-color: blue;
+        color: white;
+        padding: 3px 15px;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        margin-left: 10px;
     }
 }
