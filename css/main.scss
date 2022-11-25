@@ -1,0 +1,76 @@
+$main-color:blue;
+$border-color:#ccc;
+$gray-color:#aaa;
+$white-color:#FFF;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center !important;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: (100% * $i )/ 12;
+        flex: 0 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+    font-size: 16px;
+    @media (max-width: 567px) {
+        font-size: 12px;
+    }
+
+}
+.pos-sticky {
+    position: sticky;
+    top: 0;
+}
+
+.table {
+    margin: auto;
+    width: 100%;
+    height: 50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &.float-left {
+        float: left;
+    }
+    .item {
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $border-color;
+    }
+}
+
+.table-body {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item:nth-child(odd) {
+        background-color: $gray-color;
+    }
+
+    .item:nth-child(even) {
+        background-color: $white-color;
+    }
+}
+
+.table-header {
+    color: $white-color;
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        background-color: $main-color !important;
+    }
+}
